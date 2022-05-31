@@ -30,11 +30,18 @@ import {
 
 const StudentRegSys = (props) => {
   const [name, setName] = useState("");
+  const [fatherName, setFatherName] = useState("");
+  const [phno, setPhno] = useState("");
+  const [email, setEmail] = useState("");
+  const [NRC, setNRC] = useState("");
 
   const [image, setImage] = useState("./avatars/user.png");
   const saveClick = () => {
     if (!validateName(name)) {
       alert("name should only char");
+    }
+    if (!validateEmail(email)) {
+      alert("invalid email");
     }
   };
   const onImageChange = (e) => {
@@ -186,6 +193,7 @@ const StudentRegSys = (props) => {
               className="xs-12 sm-12 md-6 lg-6"
               name="fathername"
               placeholder="Please enter father's name"
+              onChange={(e) => setFatherName(e.target.value)}
             />
           </CCol>
         </CRow>
@@ -198,6 +206,7 @@ const StudentRegSys = (props) => {
               className=""
               name="phoneno"
               placeholder="Please enter phone number"
+              onChange={(e) => setPhno(e.target.value)}
             />
           </CCol>
         </CRow>
@@ -210,6 +219,7 @@ const StudentRegSys = (props) => {
               className=""
               name="nrc"
               placeholder="Please enter NRC number"
+              onChange={(e) => setNRC(e.target.value)}
             />
           </CCol>
         </CRow>
@@ -223,6 +233,7 @@ const StudentRegSys = (props) => {
               className=""
               name="email"
               placeholder="Please enter email address"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </CCol>
         </CRow>
