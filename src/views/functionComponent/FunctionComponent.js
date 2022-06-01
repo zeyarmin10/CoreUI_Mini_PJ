@@ -32,8 +32,8 @@ export const validateName = (name) => {
 };
 
 let numberFormat = /^[0-9]{0,9}(\.[0-9]{1,2})?$/;
-export const validateNumber = (value) => {
-  if (value.test(numberFormat)) {
+export const validateNumber = (num) => {
+  if (num.test(numberFormat)) {
     return true;
   } else return false;
 };
